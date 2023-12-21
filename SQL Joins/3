@@ -1,0 +1,21 @@
+SELECT
+  OrderData.[Type] AS OrderType,
+  CustomerData.Customer_Segment,
+  OrderData.Order_City,
+  OrderData.Order_State,
+  OrderData.Order_Country,
+  OrderData.Order_Status,
+  OrderData.order_date_DateOrders AS OrderDate,
+  OrderData.Sales,
+  OrderData.Order_Profit_Per_Order,
+  OrderData.column1,
+  ShippingData.Late_delivery_risk
+
+
+
+
+FROM CustomerData
+JOIN OrderData ON CustomerData.Customer_Id = OrderData.Order_Customer_Id
+
+
+JOIN ShippingData ON OrderData.Order_Id = ShippingData.Order_Id

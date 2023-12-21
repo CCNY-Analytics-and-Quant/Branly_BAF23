@@ -1,0 +1,19 @@
+SELECT
+   CustomerData.Customer_Segment,
+   OrderData.Order_Country,
+   OrderData.Order_Country,
+   OrderData.Sales,
+   OrderData.column1,
+   ShippingData.Market,
+   OrderData.Order_Id,
+   MainTable.Category_Id,
+   ProductData.Category_Name
+
+
+FROM MainTable
+
+
+JOIN OrderData ON MainTable.Order_Id = OrderData.Order_Id
+JOIN ShippingData ON MainTable.Order_Id = ShippingData.Order_Id
+JOIN CustomerData ON MainTable.Customer_Id = CustomerData.Customer_Id
+JOIN ProductData ON MainTable.Category_Id = ProductData.Category_Id
